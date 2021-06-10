@@ -11,14 +11,13 @@ class Artikel extends CI_Controller
     
     public function index()
     {
-        $data['artikels'] = $this->Artikel_model->viewArtikel();
+        $data['artikel'] = $this->Artikel_model->viewArtikel();
         $this->load->view('artikel_view', $data);
     }
 
     public function tambah()
     {
-        $validation = $this->form_validation; //untuk menghemat penulisan kode
-
+        $validation = $this->form_validation; 
         $validation->set_rules('judul', 'judul', 'required');
         $validation->set_rules('penulis', 'penulis', 'required');
         $validation->set_rules('isi', 'isi', 'required');

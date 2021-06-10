@@ -40,20 +40,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($murid as $m) : ?>
+                        
+                            <?php $no = $this->uri->segment('3') + 1;
+                            foreach ($murid as $m) : ?>
                                 <tr>
                                     <th scope="row"><?= $no++; ?></th>
-                                    <td><?= $m['nama']; ?></td>
-                                    <td><?= $m['nisn']; ?></td>
-                                    <td><?= $m['kelas']; ?></td>
-                                    <td><?= $m['alamat']; ?></td>
-                                    <td><a href="<?= base_url('murid/hapus/'); ?><?= $m['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah kamu ingin menghapus data ini?');">Hapus</a>
+                                    <td><?= $m->nama ?></td>
+                                    <td><?= $m->nisn; ?></td>
+                                    <td><?= $m->kelas; ?></td>
+                                    <td><?= $m->alamat; ?></td>
+                                    <td><a href="<?= base_url('murid/hapus/'); ?><?= $m->id; ?>" class="badge badge-danger" onclick="return confirm('Apakah kamu ingin menghapus data ini?');">Hapus</a>
                                     </td>
-                                    <td><a href="<?= base_url('murid/ubah/'); ?><?= $m['id']; ?>" class="badge badge-warning">Ubah</a></td>
+                                    <td><a href="<?= base_url('murid/ubah/'); ?><?= $m->id; ?>" class="badge badge-warning">Ubah</a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
+                                    <?php 
+                    echo $this->pagination->create_links();
+                    
+                    ?>
                 </div>
             </div>
         </div>

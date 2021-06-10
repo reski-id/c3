@@ -39,17 +39,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($artikels as $artikel) : ?>
-                                <tr>
-                                    <th scope="row"><?= $no++; ?></th>
-                                    <td><?= $artikel['judul']; ?></td>
-                                    <td><?= $artikel['penulis']; ?></td>
-                                    <td><?= $artikel['isi']; ?></td>
-                                    <td><a href="<?= base_url('artikel/hapus/'); ?><?= $artikel['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah kamu ingin menghapus data ini?');">Hapus</a>
-                                    </td>
-                                    <td><a href="<?= base_url('artikel/ubah/'); ?><?= $artikel['id']; ?>" class="badge badge-warning">Ubah</a></td>
-                                </tr>
-                            <?php endforeach; ?>
+                                <?php foreach ($artikel as $artikel) : ?>
+                                    <tr>
+                                        <th scope="row"><?= $no++; ?></th>
+                                        <td><?= $artikel['judul']; ?></td>
+                                        <td><?= $artikel['penulis']; ?></td>
+                                        <td><?= $artikel['isi']; ?></td>
+                                        <td><a href="<?= base_url('artikel/hapus/'); ?><?= $artikel['id']; ?>" class="badge badge-danger" onclick="return confirm('Apakah kamu ingin menghapus data ini?');">Hapus</a>
+                                        </td>
+                                        <td><a href="<?= base_url('artikel/ubah/'); ?><?= $artikel['id']; ?>" class="badge badge-warning">Ubah</a></td>
+                                    </tr>
+                                <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

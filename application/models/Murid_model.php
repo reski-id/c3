@@ -48,4 +48,11 @@ class Murid_model extends CI_Model
 
     }
 
+    function jumlah_data(){
+		return $this->db->get($this->_table)->num_rows();
+    }
+    
+    function data($number,$offset){
+		return $query = $this->db->get('murid',$number,$offset)->result();		
+	}
 }
